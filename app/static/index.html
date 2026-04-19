@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foto Frame Uploader</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; text-align: center; }
+        .upload-container { border: 2px dashed #ccc; padding: 40px; border-radius: 10px; }
+        .progress-bar-container { width: 100%; background: #f3f3f3; border-radius: 5px; margin-top: 20px; display: none; }
+        .progress-bar { height: 20px; background: #4caf50; width: 0%; border-radius: 5px; transition: width 0.2s; }
+        .status { margin-top: 10px; font-weight: bold; }
+        input[type="file"] { margin: 20px 0; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #2196f3; color: white; border: none; border-radius: 5px; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <h1>Upload Files</h1>
+    <div class="upload-container">
+        <input type="file" id="fileInput" multiple>
+        <br>
+        <button id="uploadBtn">Upload</button>
+        <div class="progress-bar-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="status" id="statusText"></div>
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+</html>

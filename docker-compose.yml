@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  uploader:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATA_DIR=/app/data
+      - IMMICH_URL=${IMMICH_URL:-http://immich-server:2283}
+      - IMMICH_API_KEY=${IMMICH_API_KEY:-your_api_key_here}
+      - IMMICH_ALBUM_ID=${IMMICH_ALBUM_ID:-your_album_id_here}
+    restart: unless-stopped
